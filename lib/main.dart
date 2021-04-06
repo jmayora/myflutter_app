@@ -8,14 +8,17 @@ class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
-    throw UnimplementedError();
+    return MyAppState();
   }
 
 }
 class MyAppState extends State {
-  var answerQuestionIndex = 0;
+  var questionIndex = 0;
   void answerQuestion() {
-    answerQuestionIndex = answerQuestionIndex + 1;
+    setState(() {
+      questionIndex = questionIndex + 1;
+    });
+
     print('Answer chosen!');
   }
 
@@ -32,7 +35,7 @@ class MyAppState extends State {
           ),
           body: Column(
             children: [
-              Text(questions[answerQuestionIndex]),
+              Text(questions[questionIndex]),
               // ignore: deprecated_member_use
               RaisedButton(child: Text('Answer 1'), onPressed: answerQuestion),
               // ignore: deprecated_member_use
