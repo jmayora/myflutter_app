@@ -9,7 +9,7 @@ class Answer extends StatelessWidget {
   Answer(this.answerQuestion, this.answerText);
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
+
     return Container(
       width: double.infinity,
       // ignore: deprecated_member_use
